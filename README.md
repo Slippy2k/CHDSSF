@@ -12,13 +12,14 @@ Note: You can use your own SSF.exe from Test Ver, but you'll have to make a coup
 1. Place WINM0.dll, libchd.dll, and chdrom in the SSF emulator (Test Ver) directory.
 
 2. Open a hex editor and patch these areas in the SSF.exe:
-```
-0x2E2014 - 63 68 64 72 6F 6D 00
-0x7975BE - 78
-0x7975CC - 78
-0x7975DE - 78
-0x7975F0 - 30
-```
+
+	```
+	0x2E2014 - 63 68 64 72 6F 6D 00
+	0x7975BE - 78
+	0x7975CC - 78
+	0x7975DE - 78
+	0x7975F0 - 30
+	```
 
 3. Run SSF.exe with a command argument that contains the relative (or absolute, whatever) path to the chd file.
 	e.g.
