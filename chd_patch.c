@@ -120,11 +120,13 @@ void init_chd_library(){
 */
 void bswap_buffer(unsigned char* buffer,unsigned int num_bytes){
 	for(int i=0;i<num_bytes;i+=2){
-		unsigned char t = buffer[i+1];
-		buffer[i+1] = buffer[i];
-		buffer[i] = t;
+		
+		buffer[i] ^= buffer[i+1];
+		buffer[i+1] ^= buffer[i];
+		buffer[i] ^= buffer[i+1];
 	}	
 }
+
 
 void read_disc_data(unsigned char*buffer,unsigned int offset,unsigned int len,unsigned int dtype){
 	
