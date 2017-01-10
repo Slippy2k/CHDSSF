@@ -14,11 +14,11 @@ Note: You can use your own SSF.exe from Test Ver, but you'll have to make a coup
 2. Open a hex editor and patch these areas in the SSF.exe:
 
 	```
-	0x2E2014 - 63 68 64 72 6F 6D 00
-	0x7975BE - 78
-	0x7975CC - 78
-	0x7975DE - 78
-	0x7975F0 - 30
+	0x2E2014 -  5C 5C 2E 5C 25 63 3A -> 63 68 64 72 6F 6D 00
+	0x7975BE - 74 -> 78
+	0x7975CC - 74 -> 78
+	0x7975DE - 74 -> 78
+	0x7975F0 - 4D -> 30
 	```
 
 3. Run SSF.exe with a command argument that contains the relative (or absolute, whatever) path to the chd file.
