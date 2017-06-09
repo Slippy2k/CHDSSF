@@ -5,31 +5,23 @@ SSF is quite the amazing Saturn emulator, however, it lacks an (enabled) option 
 
 Included is a patch started less than 24 hours ago that adds CHD support - no emulated drive needed.
 
+Update: Works on most versions automatically now with no modification required.
+
 Instructions:
 
-Note: You can use your own SSF.exe from Test Ver, but you'll have to make a couple of minor edits to make it work.
 
-1. Place WINM0.dll, libchd.dll, and chdrom in the SSF emulator (Test Ver) directory.
+1. Compile SSFLoader and ssf_patch (or use the provided versions). I use Clion+CMake+Mingw, but use whatever works.
 
-2. Open a hex editor and patch these areas in the SSF.exe:
+1. Place SSFLoader.exe, libchd.dll, and ssf_patch.dll in the SSF emulator directory.
 
-	```
-	0x2E2014 -  5C 5C 2E 5C 25 63 3A -> 63 68 64 72 6F 6D 00
-	0x7975BE - 74 -> 78
-	0x7975CC - 74 -> 78
-	0x7975DE - 74 -> 78
-	0x7975F0 - 4D -> 30
-	```
-
-3. Run SSF.exe with a command argument that contains the relative (or absolute, whatever) path to the chd file.
+3. Run SSFLoader.exe with a command argument that contains the relative (or absolute, whatever) path to the chd file.
 	e.g.
 	```
-	"SSF.exe bomb.chd"
+	"SSFLoader.exe bomb.chd"
 	```
 4. SSF should start (and so should the game), if it doesn't, check the disc drive selected under Options, it should be set to "CHDDriveVirtual", if not, set it and select "CD Close" from the Hardware drop-down.
 
-Note2: This is super messy and probably won't work with everything, the 5 or so games I tried worked perfectly, but who knows.
-I plan on cleaning this up later and adding more options.
+
 
 Happy Saturn'ing ^^
 
